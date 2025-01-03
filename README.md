@@ -56,9 +56,9 @@ I decided to do the analytics on the time periods of:
 30Minutes (30M)
 15Minutes (15M)
 
-1Minutes (1M) This will only be used later in the network centrality analytics.
+5Minutes (5M) This will only be used later in the network centrality analytics.
 
-The period i am planning to observe is 7 consecutive years (2018.01.01 - 2025.01.01 ) 
+The period i am planning to observe is 6 consecutive years (2019.01.01 - 2025.01.01 ) 
 
 The patterns i am going too look for are:
 hammer  
@@ -80,15 +80,34 @@ inverted hammer
 piercing line  
 dark cloud cover
 
-There is no other input needed at this point. Now we can run the code, it goes through the period, collects pair data, then analyse them and validate if the outcome was true or false, then if true, on which period after the appearance it became true, and what percentage movement do happen.
+There is no other input needed at this point.
+With the file "Data extraction tool optimized.py" i run an optimized data collection tool, which gets all the data from the Binance API with the given period for all the pairs. I go one by one with each periods i mentioned above, and got all the csv files with raw data -each csv file cointains one period, but all pairs-. (see uploaded)
+Then, another script going to run which is: "Ta_data_analytics_from_a_CSV" , this goes one by one through each of the csv files, and create another csv file with the completed analytics.
 The output csv file will contain columns: 'Date', 'Pair', 'Pattern', 'Signal', 'Outcome', 'Percentage Movement'
 
+Now at this point i have the following:
+6 csv files, which only containes the 'Date', 'Pair', 'Open', 'Lowest, 'Highest', 'Close' columns. Approximately 8 million rows.
+6 csv files, which is the analytics outcome, it cointains the following columns: 'Date', 'Pair', 'Pattern', 'Signal', 'Outcome', 'Percentage Movement'
+
+At this point we must go to the next point, "Scrub".
+
+2. Scrub
+So to go to the analytics, we have to concatenate all the analyzed csv files into one single files, to make it easier to navigate between periods later when analysing.
+So i used Alteryx to easily combine all the files. (See the alteryx board here: [ Alteryx_Output_setup.png
+](https://github.com/TamasArokszallasi/Crypto_TA_tool/blob/e9af88f0858801dbcc65b33ec9e1fde6a91498be/Alteryx_Output_setup.png) ) To be honest, this was the first time i am using Alteryx. I just literally fell in love with that. Amazing how easily it manages huge files, and the easiness of use is like magic. Firstly, i used jupyter notebook to combine these huge excel files, but later on i decided to go give a try to Alterix.
+
+##Data Cleaning.
+
+It appear that sometimes the model could not decide on which candlestick to choose, so it add both. This cause a bit of a uncertainity and i wanted to get rid of that, so i removed all the duplicated values with using Alteryx. 
+So duplicate combinations of three columns: 'Date', 'Pair', 'Pattern'
 
 
-3. Scrub
 4. Explore
-5. Model
-6. iNterpret
+
+   
+6. Model
+   
+8. iNterpret
 
 
 **##Scrub
