@@ -1,4 +1,4 @@
-# Technical Analysis of Cryptocurrencies using OSEMN Data Science Life Cycle
+# Technical Analysis of Cryptocurrencies with using big data
 
 
 ## Project Description
