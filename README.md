@@ -5,7 +5,12 @@
 On my way of learning data analytics with python, sql and data visualising tools, i am constantly looking for projects that can challange my skills and i do own interest in the topic itself as well. 
 I met the cryptocurrencies firstly in 2017, and since then i am constanly following it and looking with childish curiosity on what would be the next great innovation that can be solved by the blockchain industry itself. 
 Furthermore, i do graduated as an economist, and have an urge to do analysis whenever i can on whatever come across. I think that's enoguh for the short sotrytelling, let me introduce the question, methodology and answers that made this project to be done.
-Lastly, but not least, i am using the OSEMN methodology to go through the analysis.
+
+Used softwaires and programming languages:
+- Python (libraries: requests, pandas, concurrent.futures, datetime, os, TA-lib)
+- Alteryx
+- PowerBI
+- Excel
 
 
 **##Hypothesis 1**
@@ -17,7 +22,12 @@ As i mentioned previously, i am looking over this industry weekly, sometimes dai
 now at this point my hypothesises may extend into 2 or 3 hypothesis. I am wondering, which pair follows which movement? How to capture a movement? 
 
 **##Hypothesis 3**
-What other variables can be useful in terms of capturing the movements of the currencies? Central banks ?
+There are other variables that can influence the price movements, variables that are fundamental economic variables. How to catch em all? 
+
+
+**##Hypothesis 4**
+I am looking the pairs against the USDT, or other stablecoin, however these stablecoins are usually linked to other currency, more likely the USD. Is that issue can have any effect on the prices?
+
 
 Okay, so in general economics, when we are using a variable to analyse for example the fxrate of a currency, we must reason it why we are using that variable. We must cite the one who have previously used this variable and tested, basically created it.
 What would happen if we can create a variable which currently does not have any literature to use, is that makes the whole thing untrustful?
@@ -28,7 +38,8 @@ I'm going to collect data with API, then by using python, the code will go throu
 
 **Methodology in details**
 
-1. Obtain
+1. Obtaining the data
+
 The data collection is the most crucial step, it have to be accurate, with the least missing value possible, and of course from a source which is reliable.
 Since i am doing an analytics on cryptocurrencies, i figured out that the best option would be to collect data from the Binance website by using their free API, which is a genius thing, and so thankfull that i found that pretty quickly.
 
@@ -91,7 +102,7 @@ Now at this point i have the following:
 
 At this point we must go to the next point, "Scrub".
 
-2. Scrub
+2. Data cleaning and validation
 So to go to the analytics, we have to concatenate all the analyzed csv files into one single files, to make it easier to navigate between periods later when analysing.
 So i used Alteryx to easily combine all the files. (See the alteryx board here: [ Alteryx_Output_setup.png
 ](https://github.com/TamasArokszallasi/Crypto_TA_tool/blob/e9af88f0858801dbcc65b33ec9e1fde6a91498be/Alteryx_Output_setup.png) ) To be honest, this was the first time i am using Alteryx. I just literally fell in love with that. Amazing how easily it manages huge files, and the easiness of use is like magic. Firstly, i used jupyter notebook to combine these huge excel files, but later on i decided to go give a try to Alterix.
@@ -101,13 +112,16 @@ So i used Alteryx to easily combine all the files. (See the alteryx board here: 
 It appear that sometimes the model could not decide on which candlestick to choose, so it add both. This cause a bit of a uncertainity and i wanted to get rid of that, so i removed all the duplicated values with using Alteryx. 
 So duplicate combinations of three columns: 'Date', 'Pair', 'Pattern'
 
+3. Analyzing data & results
 
-4. Explore
+The most important, and doubtlessly the most exciting part just came. 
+Now i put all the cleaned csv file to my faviourite visulising tool, PowerBI.
 
-   
-6. Model
-   
-8. iNterpret
+At this point i would kindly ask the reader to open each time the link (which is a picture uploaded to github) where he/she can observe the visualisation i am describing. Thank you! :)
+
+First outlook of the data: https://github.com/TamasArokszallasi/Crypto_TA_tool/blob/83f021e6b0545bcbba37c77e55179c6aa45fb430/Total_basic_analytics.png
+In this graph, we can see that the total outcome distribution of true and false was 73.05% True and 26.95% False. This means that almos 3/4 times the outcome prediction of a candlestick proven true, which is AMAZING, even unbeliveable. The rest two table shows that Bullish/Bearish signal distribution is almost equal, and by far, the leader in terms of appearance is the Long Legged Doji candlesticks patterns, both bullish/bearish.
+
 
 
 **##Scrub
