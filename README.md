@@ -66,8 +66,7 @@ I decided to do the analytics on the time periods of:
 1Hours (1H)
 30Minutes (30M)
 15Minutes (15M)
-
-5Minutes (5M) This will only be used later in the network centrality analytics.
+5Minutes (5M) 
 
 The period i am planning to observe is 6 consecutive years (2019.01.01 - 2025.01.01 ) 
 
@@ -121,7 +120,22 @@ At this point i would kindly ask the reader to open each time the link (which is
 
 First outlook of the data: https://github.com/TamasArokszallasi/Crypto_TA_tool/blob/83f021e6b0545bcbba37c77e55179c6aa45fb430/Total_basic_analytics.png
 In this graph, we can see that the total outcome distribution of true and false was 73.05% True and 26.95% False. This means that almos 3/4 times the outcome prediction of a candlestick proven true, which is AMAZING, even unbeliveable. The rest two table shows that Bullish/Bearish signal distribution is almost equal, and by far, the leader in terms of appearance is the Long Legged Doji candlesticks patterns, both bullish/bearish.
+I went through all the periods, and the worst performing was the 5minute where the false outcome were 27% and the best was the 1d period with 25%. Not a huge difference at all.
+
+In this visualisation: https://github.com/TamasArokszallasi/Crypto_TA_tool/blob/4c7c2d11909034d62393a4eba9e5c0b4580613f4/T_F_distribution_per_pattern.png
+We can see how the True and False outcomes distribute between the different pattern. There is no huge performance difference them. So in almost 75% in each pattern the outcome is true, the rest is false.
+
+I have introduced the main analytic outcomes, the further investigation will take place later, when the times enables me to do so.
+
+**4. Future**
+
+The next step is to implement few indicators that are widely used, such as EMA, SMA, Stochastic RSI, Boillinger Band, Ichimoku Cloud or anything that relates, and do the analytical part for that as well. Those indicators are great to spot resistance or support lines in the prices. 
+
++1 future can be creating a trading bot which can signal me live if a pattern appear on a chart and i can act upon that.
++1 The network centrality analysis must taken place soon as well, here at my github most likely.
+
+Thank you for reading it! :)
 
 
 
-**##Scrub
+
