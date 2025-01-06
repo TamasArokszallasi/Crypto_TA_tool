@@ -96,7 +96,7 @@ Then, another script going to run which is: "Ta_data_analytics_from_a_CSV" , thi
 The output csv file will contain columns: 'Date', 'Pair', 'Pattern', 'Signal', 'Outcome', 'Percentage Movement'
 
 Now at this point i have the following:
-6 csv files, which only containes the 'Date', 'Pair', 'Open', 'Lowest, 'Highest', 'Close' columns. Approximately 8 million rows.
+6 csv files, which only containes the 'Date', 'Pair', 'Open', 'Lowest, 'Highest', 'Close' columns. Approximately 10.5 million rows.
 6 csv files, which is the analytics outcome, it cointains the following columns: 'Date', 'Pair', 'Pattern', 'Signal', 'Outcome', 'Percentage Movement'
 
 At this point we must go to the next point, "Scrub".
