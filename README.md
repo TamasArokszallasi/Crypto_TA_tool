@@ -89,6 +89,7 @@ hanging man
 inverted hammer  
 piercing line  
 dark cloud cover
+**I have uploaded a cheat sheet PDF to help you understand what are these patterns for.**
 
 There is no other input needed at this point.
 With the file "Data extraction tool optimized.py" i run an optimized data collection tool, which gets all the data from the Binance API with the given period for all the pairs. I go one by one with each periods i mentioned above, and got all the csv files with raw data -each csv file cointains one period, but all pairs-. (see uploaded)
